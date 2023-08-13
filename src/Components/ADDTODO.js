@@ -44,6 +44,8 @@ export default function ADDTODO(props) {
       setTaskList((data)=>{
         return [...data,todo_task]
       });
+      setTODOTASK({todo_name:"",todo_date:"",todo_description:"",todo_status:false})
+      props.setOpen(false);
     }
   }
   return (
