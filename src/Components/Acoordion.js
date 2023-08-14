@@ -33,7 +33,6 @@ export default function Acoordion(props) {
             {props.task.todo_name}
         <div className="icons_accordion">
             <MdDelete className='del_icon' onClick={handleDeleteTodo}/>
-            
         </div>
       </div>
       <Collapse isOpened={collapse}>
