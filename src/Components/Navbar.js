@@ -1,6 +1,5 @@
 import React from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-// import Button from '@mui/material/Button';
 import NAVITEMS from '../Configuration/Navbar';
 import ADDTODO from './ADDTODO';
 import { NavLink } from 'react-router-dom';
@@ -14,7 +13,7 @@ const Navbar = (props) => {
     const handleClose = () => {
       setOpen(false);
     };
-    console.log(props.Toggle)
+    // console.log(props.Toggle)
 
     return (
         

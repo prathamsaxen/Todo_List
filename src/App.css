@@ -1,3 +1,13 @@
+:root{
+  --purple-Avatar:#e86af1;
+  --hover_menu_gray:#afafb16e;
+  --dangerRed:red; 
+  --primaryWhite:white;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
   padding: 0;
@@ -20,7 +30,6 @@ body {
   z-index: -1;
   background: url(./Assets/image/Todo-bg.jpg);
   background-position: center;
-  border: 2px solid black;
   background-size: cover;
   filter: opacity(0.9);
 }
@@ -51,7 +60,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 40px;
-  background-color: #e86af1; /* Placeholder for avatar */
+  background-color: var(--purple-Avatar); /* Placeholder for avatar */
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -60,10 +69,10 @@ body {
   font-weight: bold;
 }
 
-.search {
+/* .search {
   padding: 15px;
   border-bottom: 1px solid #ddd;
-}
+} */
 
 .search input {
   width: 100%;
@@ -79,18 +88,15 @@ a.active{
   padding: 15px;
   cursor: pointer;
   text-decoration: none;
-  /* display:inline-flex;
-  align-items: center;
-  justify-content: center; */
   border-bottom: 1px solid #ddd;
 }
 .menu:hover{
-  background-color: #afafb16e;
+  background-color: var(--hover_menu_gray);
 }
 
 .menu-heading {
   font-weight: bold;
-  color: white;
+  color: var(--primaryWhite);
 }
 .menu-heading i{
   padding-right: 5px;
@@ -113,7 +119,7 @@ a.active{
 .bottom-button {
   margin-top: auto;
   background-color: #007bff;
-  color: #fff;
+  color: var(--primaryWhite);
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -180,7 +186,7 @@ a.active{
 
 .bottom-button {
   border: 1px solid lightgray;
-  background-color: white;
+  background-color: var(--primaryWhite);
   color: black;
   padding: 5px 10px;
   border-radius: 5px;
@@ -200,7 +206,7 @@ a.active{
   flex-direction: column;
   gap: 10px;
 
-  background-color: #fff;
+  background-color: var(--primaryWhite);
   padding: 20px;
   border-radius: 10px;
   position: relative;
@@ -292,7 +298,7 @@ a.active{
   border: 2px solid #cacaca;
   border-radius: 0px;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--primaryWhite);
   cursor: pointer;
   display: inline-block;
   font-weight: 390;
@@ -368,17 +374,17 @@ a.active{
 }
 
 .fancy:hover {
-  color: white;
+  color: var(--primaryWhite);
   background: #cacaca;
 }
 
 .fancy:hover::before {
   width: 1.5rem;
-  background: white;
+  background: var(--primaryWhite);
 }
 
 .fancy:hover .text {
-  color: white;
+  color: var(--primaryWhite);
   padding-left: 1.5em;
 }
 
@@ -397,9 +403,37 @@ a.active{
   width: 90%;
   margin: auto;
   margin: 10px auto;
-  background-color: white;
+  background-color: var(--primaryWhite);
   border-radius: 5px;
   padding: 15px;
   cursor: pointer;
-
+}
+.Task_Accordion{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-size: 23px;
+  align-items: center;
+}
+.icons_accordion{
+  font-size: 25px;
+}
+.del_icon:hover{
+  color: var(--dangerRed);
+}
+.SearchBar{
+  /* border: 2px solid var(--purple-Avatar); */
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SearchBar input{
+  width: 70%;
+  padding: 4px;
+  border-radius: 3px;
+  outline: none;
+  backdrop-filter: blur(3px) brightness(0.7);
+  border: none;
+  background-color: var(--primaryWhite);
 }

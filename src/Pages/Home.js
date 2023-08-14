@@ -1,17 +1,10 @@
 import React from 'react'
-import MyAccordion from '../Components/Acoordion';
-import { useContext } from 'react';
-import { TASKCONTEXT } from '../Context/ContextAPI';
+import Search from '../Components/Search';
 export default function Home() {
-    document.title="HOME | TODO";
-    const { taskList} = useContext(TASKCONTEXT);
+    document.title="HOME";
     return (
-    <div>
-      {
-      taskList.map((item,index)=>{
-        return <MyAccordion key={index} task={item} />
-      })
-     }
+    <div className='Home'>
+         <Search/>
     </div>
   )
 }
