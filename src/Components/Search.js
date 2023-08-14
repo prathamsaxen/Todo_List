@@ -2,12 +2,15 @@ import React,{useState} from 'react'
 import MyAccordion from '../Components/Acoordion';
 import { useContext } from 'react';
 import { TASKCONTEXT } from '../Context/ContextAPI';
-export default function Search() {
+import { useLocation } from "react-router-dom";
+export default function Search(props) {
     const { taskList } = useContext(TASKCONTEXT);
     const [searchTerm, setSearchTerm] = useState('');
     const filteredTodos = taskList.filter(todo =>
     todo.todo_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
+    const location=useLocation();
+    console.log(location)
   return (
     <>
     <div className="SearchBar">

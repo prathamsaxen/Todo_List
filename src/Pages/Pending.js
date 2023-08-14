@@ -4,7 +4,7 @@ export default function Pending() {
     document.title="PENDING";
   return (
     <div>
-     <Search/>
+     <Search Data={"pending"}/>
     </div>
   )
 }

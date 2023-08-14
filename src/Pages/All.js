@@ -6,7 +6,7 @@ export default function All() {
     document.title="ALL";
     return (
     <div className='All'>
-     <Search/>
+     <Search />
     </div>
   )
 }

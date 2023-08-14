@@ -4,7 +4,7 @@ export default function Completed() {
     document.title="COMPLETED";
   return (
     <div>
-      <Search/>
+      <Search Data={"done"}/>
     </div>
   )
 }
