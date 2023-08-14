@@ -18,7 +18,7 @@ const style = {
     pb: 3,
   };
 export default function ADDTODO(props) {
-  const [todo_task,setTODOTASK]=useState({todo_name:"",todo_date:"",todo_description:"",todo_status:false});
+  const [todo_task,setTODOTASK]=useState({todo_name:"",todo_date:"",todo_description:"",completed:false});
   const  onChangeFunction=(event)=>{
     if(event.target.id==="todo_name")
     {
@@ -44,7 +44,7 @@ export default function ADDTODO(props) {
       setTaskList((data)=>{
         return [...data,todo_task]
       });
-      setTODOTASK({todo_name:"",todo_date:"",todo_description:"",todo_status:false})
+      setTODOTASK({todo_name:"",todo_date:"",todo_description:"",completed:false})
       props.setOpen(false);
     }
   }

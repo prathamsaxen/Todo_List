@@ -10,7 +10,7 @@ export default function Search(props) {
     todo.todo_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     const location=useLocation();
-    console.log(location)
+    // const done=
   return (
     <>
     <div className="SearchBar">
@@ -20,7 +20,7 @@ export default function Search(props) {
       filteredTodos.map((item,index)=>{
         return <MyAccordion key={index} task={item} id={index}/>
       })
-     }
+      }
      </>
   )
 }

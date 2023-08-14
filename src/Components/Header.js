@@ -7,7 +7,7 @@ const Header = () => {
   const [count,setCount]=useState(0);
   useEffect(()=>{
     taskList.forEach(element => {
-      if(!element.todo_status)
+      if(!element.completed)
       {
         setCount(count+1);
       }
