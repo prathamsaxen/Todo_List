@@ -422,8 +422,6 @@ a.active{
   color: var(--dangerRed);
 }
 .SearchBar{
-  /* border: 2px solid var(--purple-Avatar); */
-  /* height: 7vh; */
   display: flex;
   justify-content: center;
   align-items: center;
