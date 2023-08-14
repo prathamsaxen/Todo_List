@@ -58,7 +58,7 @@ export default function ADDTODO(props) {
     <input required type="text" placeholder="Enter Todo..." className="input" id='todo_name' value={todo_task.todo_name} onChange={onChangeFunction}/>
   </label>
   <label>
-    <input required placeholder type="date" className="input" id='todo_date' value={todo_task.todo_date} onChange={onChangeFunction}/>
+    <input required type="date" className="input" id='todo_date' value={todo_task.todo_date} onChange={onChangeFunction} placeholder="Enter due date..."/>
   </label> 
  
   <label>
