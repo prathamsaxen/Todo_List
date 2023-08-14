@@ -13,7 +13,7 @@ function App() {
     <TASKCONTEXT.Provider value={{taskList,setTaskList}}>
     <BrowserRouter>
     <div className="App">
-    <button className='toggle-sidebar' onClick={()=>setToggle(!Toggle)}><GiHamburgerMenu style={{color:'white'}}/></button>
+    <button className='toggle-sidebar' onClick={()=>setToggle(!Toggle)}><GiHamburgerMenu style={{color:'black'}}/></button>
       <Navbar Toggle={Toggle}/>
       <div className="Main">
       <Header/>

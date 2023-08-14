@@ -49,8 +49,8 @@ export default function ADDTODO(props) {
     }
   }
   return (
-    <div className='myModal'>
-        <Box sx={{ ...style, width: 600 }}>
+    <div className='myModal' style={{background:'blue'}}>
+        <Box sx={{ ...style, maxWidth: 600, width:'100%',zIndex:'1000',boxShadow:'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',borderRadius:'25px',border:'none' }}>
        <form className="form" onSubmit={SUBMIT_FUNCTION}>
        <ImCross style={{position:'absolute',top:'0',left:'0',color:'black'}} onClick={()=>props.setOpen(false)}/>
        <label>

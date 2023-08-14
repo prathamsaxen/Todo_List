@@ -7,6 +7,7 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -102,6 +103,19 @@ a.active{
   padding-right: 5px;
 }
 
+.navbar-links {
+  list-style: none;
+  position: absolute;
+  background-color: var(--navbar-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 0;
+  right: 0;
+  margin: 0;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
 .submenu {
   display: none;
   padding-left: 15px;
@@ -144,13 +158,16 @@ a.active{
   .toggle-sidebar {
     display: block;
     width: 34px;
-    height: 24px;
+    height: 34px;
     position: fixed;
     z-index: 98;
-    top: 0;
+    top: 15px;
     left: 0px;
-    background: transparent;
+    
     border: 0;
+    border-radius: 50%;
+    background: #e0e0e0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
 }
 }
 
@@ -436,6 +453,15 @@ a.active{
   background-color: var(--primaryWhite);
   margin-top: 15px;
 }
-.Edit_TODO{
-  border: 2px solid red;
+.EDIT_TODO{
+  border: 2px solid black;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.MainEdit{
+  width: 30%;
+  height: 30%;
 }
