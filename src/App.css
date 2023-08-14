@@ -423,17 +423,18 @@ a.active{
 }
 .SearchBar{
   /* border: 2px solid var(--purple-Avatar); */
-  height: 7vh;
+  /* height: 7vh; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .SearchBar input{
   width: 70%;
-  padding: 4px;
+  padding: 8px;
   border-radius: 3px;
   outline: none;
   backdrop-filter: blur(3px) brightness(0.7);
   border: none;
   background-color: var(--primaryWhite);
+  margin-top: 15px;
 }
