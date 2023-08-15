@@ -19,7 +19,7 @@ import EDIT_TODO from './EDIT_TODO';
 
 export default function Acoordion(props) {
   const [collapse,setCollapse]=useState(false);
-  const {taskList, setTaskList } = useContext(TASKCONTEXT);
+  const {taskList, setTaskList,deleteToast } = useContext(TASKCONTEXT);
   const [edit,setEdit]=useState(false);
   const CollapseSwitch=()=>{
     setCollapse(!collapse);
@@ -29,7 +29,7 @@ export default function Acoordion(props) {
   }
   const handleDeleteTodo = () => {
     const updatedTodos = taskList.filter((todo,index) => props.id !== index);
-
+    deleteToast("Task Deleted!")
     setTaskList(updatedTodos);
   };
   return (

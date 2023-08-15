@@ -5,7 +5,7 @@ import {ImCross} from 'react-icons/im'
 import { useContext } from 'react';
 import { TASKCONTEXT } from '../Context/ContextAPI';
 function EDIT_TODO(props) {
-    const {taskList, setTaskList } = useContext(TASKCONTEXT);
+    const {taskList, setTaskList,successToast,warnToast} = useContext(TASKCONTEXT);
     const [todo_task,setTODOTASK]=useState({todo_name:taskList[props.task].todo_name,todo_date:taskList[props.task].todo_date,todo_description:taskList[props.task].todo_description,completed:taskList[props.task].completed});
     const  onChangeFunction=(event)=>{
         if(event.target.id==="todo_name")
@@ -22,9 +22,10 @@ function EDIT_TODO(props) {
       }
       const SUBMIT_FUNCTION=(event)=>{
         event.preventDefault();
-        if(todo_task.todo_name==="" && todo_task.todo_date==="" && todo_task.todo_description==="")
+        if(todo_task.todo_name==="" || todo_task.todo_date==="" || todo_task.todo_description==="")
         {
           console.log("PLease Fill all the fields");
+          warnToast("Please fill all fields")
         }
         else
         {
@@ -33,6 +34,7 @@ function EDIT_TODO(props) {
           )
           )
           props.handleEdit();
+          successToast("Task Updated!");
         }
       }
     const style = {
@@ -56,14 +58,14 @@ function EDIT_TODO(props) {
        <ImCross style={{position:'absolute',top:'0',left:'0',color:'black'}} onClick={()=>props.handleEdit()}/>
        <label>
 
-    <input required type="text" placeholder="Enter Todo..." className="input" id='todo_name' value={todo_task.todo_name} onChange={onChangeFunction}/>
+    <input  type="text" placeholder="Enter Todo..." className="input" id='todo_name' value={todo_task.todo_name} onChange={onChangeFunction}/>
   </label>
   <label>
-    <input required type="date" className="input" id='todo_date' value={todo_task.todo_date} onChange={onChangeFunction} placeholder="Enter due date..."/>
+    <input  type="date" className="input" id='todo_date' value={todo_task.todo_date} onChange={onChangeFunction} placeholder="Enter due date..."/>
   </label> 
  
   <label>
-    <textarea required rows={3} className="input01" defaultValue={""} placeholder="Description" id='todo_description' value={todo_task.todo_description} onChange={onChangeFunction}/>
+    <textarea  rows={3} className="input01" defaultValue={""} placeholder="Description" id='todo_description' value={todo_task.todo_description} onChange={onChangeFunction}/>
   </label>
   <button className="fancy">
     <span className="text">Submit</span>

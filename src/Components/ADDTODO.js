@@ -32,12 +32,13 @@ export default function ADDTODO(props) {
       setTODOTASK({...todo_task,todo_description:event.target.value});
     }
   }
-  const { setTaskList } = useContext(TASKCONTEXT);
+  const { setTaskList,successToast,warnToast } = useContext(TASKCONTEXT);
   const SUBMIT_FUNCTION=(event)=>{
     event.preventDefault();
-    if(todo_task.todo_name==="" && todo_task.todo_date==="" && todo_task.todo_description==="")
+    if(todo_task.todo_name==="" || todo_task.todo_date==="" || todo_task.todo_description==="")
     {
       console.log("PLease Fill all the fields");
+      warnToast("Please fill all the fields");
     }
     else
     {
@@ -45,9 +46,11 @@ export default function ADDTODO(props) {
         return [...data,todo_task]
       });
       setTODOTASK({todo_name:"",todo_date:"",todo_description:"",completed:false})
+      successToast("Task Added!")
       props.setOpen(false);
     }
   }
+  
   return (
     <div className='myModal' style={{background:'blue'}}>
         <Box sx={{ ...style, maxWidth: 600, width:'100%',zIndex:'1000',boxShadow:'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',borderRadius:'25px',border:'none' }}>
@@ -55,14 +58,14 @@ export default function ADDTODO(props) {
        <ImCross style={{position:'absolute',top:'0',left:'0',color:'black'}} onClick={()=>props.setOpen(false)}/>
        <label>
 
-    <input required type="text" placeholder="Enter Todo..." className="input" id='todo_name' value={todo_task.todo_name} onChange={onChangeFunction}/>
+    <input type="text" placeholder="Enter Todo..." className="input" id='todo_name' value={todo_task.todo_name} onChange={onChangeFunction}/>
   </label>
   <label>
-    <input required type="date" className="input" id='todo_date' value={todo_task.todo_date} onChange={onChangeFunction} placeholder="Enter due date..."/>
+    <input  type="date" className="input" id='todo_date' value={todo_task.todo_date} onChange={onChangeFunction} placeholder="Enter due date..."/>
   </label> 
  
   <label>
-    <textarea required rows={3} className="input01" defaultValue={""} placeholder="Description" id='todo_description' value={todo_task.todo_description} onChange={onChangeFunction}/>
+    <textarea  rows={3} className="input01" defaultValue={""} placeholder="Description" id='todo_description' value={todo_task.todo_description} onChange={onChangeFunction}/>
   </label>
   <button className="fancy">
     <span className="text">Submit</span>
